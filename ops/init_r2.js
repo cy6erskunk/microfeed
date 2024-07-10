@@ -70,6 +70,7 @@ class SetupR2 {
       console.log(e);
       throw e;
     }
+    console.log('Bucket is set up, setting up cors rules');
     await this._setupCorsRules();
   }
 }
