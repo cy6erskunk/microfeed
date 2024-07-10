@@ -63,6 +63,7 @@ class SetupR2 {
 
   async setupPublicBucket() {
     const bucket = this.v.get('R2_PUBLIC_BUCKET');
+    !bucket && console.log('Could not read R2_PUBLIC_BUCKET');
     await this._setupBucket(bucket);
     await this._setupCorsRules();
   }
@@ -70,5 +71,6 @@ class SetupR2 {
 
 (async () => {
   const setupR2 = new SetupR2();
+  console.log('R2 initialised');
   await setupR2.setupPublicBucket();
 })();
