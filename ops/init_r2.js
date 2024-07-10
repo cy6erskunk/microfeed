@@ -67,7 +67,7 @@ class SetupR2 {
     try {
     await this._setupBucket(bucket);
     } catch (e) {
-      console.log(e);
+      console.log('BOOM', JSON.stringify(e));
       throw e;
     }
     console.log('Bucket is set up, setting up cors rules');
